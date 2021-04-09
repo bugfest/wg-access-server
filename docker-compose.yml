@@ -9,6 +9,7 @@ services:
     container_name: wg-access-server
     cap_add:
       - NET_ADMIN
+      - NET_RAW
     volumes:
       - "wg-access-server-data:/data"
     #   - "./config.yaml:/config.yaml" # if you have a custom config file

@@ -97,7 +97,9 @@ spec:
         - name: wg-access-server
           securityContext:
             capabilities:
-              add: ['NET_ADMIN']
+              add:
+                - NET_ADMIN
+                - NET_RAW
           image: "place1/wg-access-server:v0.4.6"
           imagePullPolicy: IfNotPresent
           ports:

@@ -31,7 +31,9 @@ spec:
         - name: {{ .Chart.Name }}
           securityContext:
             capabilities:
-              add: ['NET_ADMIN']
+              add:
+                - NET_ADMIN
+                - NET_RAW
           image: "{{ .Values.image.repository }}:{{ .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
